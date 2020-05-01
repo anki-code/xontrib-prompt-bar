@@ -3,7 +3,7 @@ import socket
 import getpass
 import time
 
-def _theme_bar():
+def _prompt_bar():
     BARBG = '{BACKGROUND_#323232}'
     BARFG = '{#AAA}'
     PILLBG = '{BACKGROUND_#333}'
@@ -45,5 +45,5 @@ def _theme_bar():
     bar = '{lpc}{BARBG}{BARFG}{w}{rpc}'.format(lpc=lpc, w=w, rpc=rpc, BARBG=BARBG, BARFG=BARFG)
     return '%s%s%s{NO_COLOR}' % (BARBG, BARFG, bar)
 
-$PROMPT_FIELDS['theme_bar'] = _theme_bar
-$PROMPT="\n{theme_bar}\n{WHITE}{prompt_end}{NO_COLOR} "
+$PROMPT_FIELDS['prompt_bar'] = _prompt_bar
+$PROMPT="\n{prompt_bar}\n{WHITE}{prompt_end}{NO_COLOR} "
