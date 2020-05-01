@@ -2,8 +2,8 @@ The bar theme for [xonsh shell](https://xon.sh).
 
 ## Install
 ```
-xpip install -U git+https://github.com/anki-code/xontrib-theme-bar
-echo 'xontrib load theme_bar' >> ~/.xonshrc
+xpip install -U git+https://github.com/anki-code/xontrib-prompt-bar
+echo 'xontrib load prompt_bar' >> ~/.xonshrc
 # Reload xonsh
 ```
 

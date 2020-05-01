@@ -8,7 +8,7 @@ except (IOError, OSError):
     long_description = ''
 
 setup(
-    name='xontrib-theme-bar',
+    name='xontrib-prompt-bar',
     version='0.0.1',
     license='BSD',
     author='anki',
@@ -24,11 +24,11 @@ setup(
     package_dir={'xontrib': 'xontrib'},
     package_data={'xontrib': ['*.xsh']},
     platforms='any',
-    url='https://github.com/anki-code/xontrib-theme-bar',
+    url='https://github.com/anki-code/xontrib-prompt-bar',
     project_urls={
-        "Documentation": "https://github.com/anki-code/xontrib-theme-bar/blob/master/README.md",
-        "Code": "https://github.com/anki-code/xontrib-theme-bar",
-        "Issue tracker": "https://github.com/anki-code/xontrib-theme-bar/issues",
+        "Documentation": "https://github.com/anki-code/xontrib-prompt-bar/blob/master/README.md",
+        "Code": "https://github.com/anki-code/xontrib-prompt-bar",
+        "Issue tracker": "https://github.com/anki-code/xontrib-prompt-bar/issues",
     },
     classifiers=[
         'Environment :: Console',
