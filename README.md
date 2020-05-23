@@ -1,5 +1,5 @@
 <p align="center">  
-The bar theme for [xonsh shell](https://xon.sh).
+The bar theme for <a href="https://xon.sh">xonsh shell</a>.
 </p>
 
 <p align="center">  
