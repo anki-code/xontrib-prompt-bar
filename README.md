@@ -8,7 +8,7 @@ echo 'xontrib load prompt_bar' >> ~/.xonshrc
 ```
 
 ## Appearence
-<img src='static/Demo.png' alt='[Demo]'>
+<img src='https://raw.githubusercontent.com/anki-code/xontrib-prompt-bar/master/static/Demo.png' alt='[Demo]'>
 
 ## Use cases
 
@@ -27,7 +27,7 @@ xontrib load prompt_bar
 ```
 Result:
 
-<img src='static/Demo-custom.png' alt='[Demo custom fields]'>
+<img src='https://raw.githubusercontent.com/anki-code/xontrib-prompt-bar/master/static/Demo-custom.png' alt='[Demo custom fields]'>
 
 ## Future
 It will be great if it will be reimplemented as shown in awesome [example from Jonathan Slenders](https://github.com/prompt-toolkit/python-prompt-toolkit/blob/master/examples/prompts/fancy-zsh-prompt.py). Xonsh guru help wanted :)
