@@ -19,8 +19,18 @@ echo 'xontrib load prompt_bar' >> ~/.xonshrc
 
 ## Use cases
 
-### Add custom fields
-```
+### Fields and colors
+The bar theme support [xonsh default fields and colors notation](https://xon.sh/tutorial.html#customizing-the-prompt).
+
+To customize the appearance of the fields on the bar you can use wrappers:
+* `{hostname}` - no wrapper
+* `{hostname#section}` - add backlight for the text
+* `{hostname#accent}` - bold font and lighter color
+* Also you can create your own wrapper.
+
+### Add custom fields and wrappers
+How to add two new fields called `my_left_custom` and `my_left_custom` and one new wrapper called `brackets`.
+```python
 $PROMPT_FIELDS['my_left_custom'] = 'Hello left!'
 $PROMPT_FIELDS['my_right_custom'] = lambda: '>'*3 + ' {YELLOW}Hello right!'
 
@@ -30,6 +40,7 @@ $XONTRIB_PROMPT_BAR_WRAPPERS = {
 
 $XONTRIB_PROMPT_BAR_LEFT = '{hostname}{user}{pwd#accent}{my_left_custom#brackets}'
 $XONTRIB_PROMPT_BAR_RIGHT = '{my_right_custom#section}{env_name#section}{gitstatus_noc#section}{date_time_tz}'
+
 xontrib load prompt_bar
 ```
 Result:
