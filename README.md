@@ -8,9 +8,26 @@ echo 'xontrib load prompt_bar' >> ~/.xonshrc
 ```
 
 ## Appearence
-<p align="center">  
-  <a href="https://asciinema.org/a/osSEzqnmH9pMYEZibNe2K7ZL7" target="_blank"><img src="https://asciinema.org/a/osSEzqnmH9pMYEZibNe2K7ZL7.svg"></a><br>
-</p>
+<img src='static/Demo.png' alt='[Demo]'>
 
-## Help wanted
-It will be great if it will be reimplemented as shows in awesome [example from Jonathan Slenders](https://github.com/prompt-toolkit/python-prompt-toolkit/blob/master/examples/prompts/fancy-zsh-prompt.py). 
+## Use cases
+
+### Add custom fields
+```
+$PROMPT_FIELDS['my_left_custom'] = 'Hello left!'
+$PROMPT_FIELDS['my_right_custom'] = lambda: '>'*3 + ' {YELLOW}Hello right!'
+
+$XONTRIB_PROMPT_BAR_WRAPPERS = {
+    'brackets': lambda v: f'[{v}]'
+}
+
+$XONTRIB_PROMPT_BAR_LEFT = '{hostname}{user}{pwd#accent}{my_left_custom#brackets}'
+$XONTRIB_PROMPT_BAR_RIGHT = '{my_right_custom#section}{env_name#section}{gitstatus_noc#section}{date_time_tz}'
+xontrib load prompt_bar
+```
+Result:
+
+<img src='static/Demo-custom.png' alt='[Demo custom fields]'>
+
+## Future
+It will be great if it will be reimplemented as shown in awesome [example from Jonathan Slenders](https://github.com/prompt-toolkit/python-prompt-toolkit/blob/master/examples/prompts/fancy-zsh-prompt.py). Xonsh guru help wanted :)
