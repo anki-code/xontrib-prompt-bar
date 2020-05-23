@@ -20,13 +20,13 @@ echo 'xontrib load prompt_bar' >> ~/.xonshrc
 ## Use cases
 
 ### Fields and colors
-The bar theme support [xonsh default fields and colors notation](https://xon.sh/tutorial.html#customizing-the-prompt).
+The bar theme supports [xonsh default fields and colors notation](https://xon.sh/tutorial.html#customizing-the-prompt).
 
 To customize the appearance of the fields on the bar you can use wrappers:
 * `{hostname}` - no wrapper
 * `{hostname#section}` - add backlight for the text
 * `{hostname#accent}` - bold font and lighter color
-* Also you can create your own wrapper.
+* Also you can create your own fields and wrapper. See the section below.
 
 ### Add custom fields and wrappers
 How to add two new fields called `my_left_custom` and `my_left_custom` and one new wrapper called `brackets`.
