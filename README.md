@@ -1,4 +1,14 @@
+<p align="center">  
 The bar theme for [xonsh shell](https://xon.sh).
+</p>
+
+<p align="center">  
+<img src='https://raw.githubusercontent.com/anki-code/xontrib-prompt-bar/master/static/Demo.png' alt='[Demo]'>
+</p>
+
+<p align="center">  
+If you like the idea of bar theme click ⭐ on the repo and stay tuned.
+</p>
 
 ## Install
 ```
@@ -6,9 +16,6 @@ xpip install -U xontrib-prompt-bar
 echo 'xontrib load prompt_bar' >> ~/.xonshrc
 # Reload xonsh
 ```
-
-## Appearence
-<img src='https://raw.githubusercontent.com/anki-code/xontrib-prompt-bar/master/static/Demo.png' alt='[Demo]'>
 
 ## Use cases
 
