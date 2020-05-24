@@ -1,13 +1,14 @@
 import os
 import re
 import time
+from pathlib import Path
 from string import Formatter
 
 """
 Supported colors: https://xon.sh/tutorial.html#customizing-the-prompt
 """
 
-_LEFT = __xonsh__.env.get('XONTRIB_PROMPT_BAR_LEFT', '{hostname}{user}{pwd#accent}')
+_LEFT = __xonsh__.env.get('XONTRIB_PROMPT_BAR_LEFT', '{hostname}{user}{cwd_abs#accent}')
 _RIGHT = __xonsh__.env.get('XONTRIB_PROMPT_BAR_RIGHT', '{env_name#section}{gitstatus_noc#section}{date_time_tz}')
 _BARBG = __xonsh__.env.get('XONTRIB_PROMPT_BAR_BG', '{BACKGROUND_#323232}')
 _BARFG = __xonsh__.env.get('XONTRIB_PROMPT_BAR_FG', '{#AAA}')
@@ -21,22 +22,12 @@ def _remove_colors(s):
         return ''
     return re.sub('{([A-Z0-9#_]+?)}', '', s)
 
-
-def _field_pwd():
-    try:
-        return os.getcwd()
-    except:
-        return '{#C00}PWD_NOT_FOUND'
-
-
 def _field_date_time_tz():
     t = time.strftime('%y-%m-%d %H:%M:%S%z', time.localtime())
-    if t[-2:] == '00':
-        t = t[:-2]
-    return t
+    return t[:-2] if t[-2:] == '00' else t
 
 $PROMPT_FIELDS['env_prefix'] = $PROMPT_FIELDS['env_postfix'] = ''
-$PROMPT_FIELDS['pwd'] = _field_pwd
+$PROMPT_FIELDS['cwd_abs'] = lambda: str(Path($PROMPT_FIELDS['cwd']()).expanduser())
 $PROMPT_FIELDS['date_time_tz'] = _field_date_time_tz
 $PROMPT_FIELDS['gitstatus_noc'] = lambda: _remove_colors($PROMPT_FIELDS['gitstatus']())
 
