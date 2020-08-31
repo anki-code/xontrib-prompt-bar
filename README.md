@@ -10,6 +10,17 @@ The bar theme for <a href="https://xon.sh">xonsh shell</a>.
 If you like the idea of bar theme click ⭐ on the repo and stay tuned.
 </p>
 
+Features:
+
+* Clear concept. The bar is a delimiter and information panel. Three attention aspects: command line and path, output, sections with additional info.
+
+* The command beginning has fixed position to have a large command line every time and avoid mess of attention.
+
+* The sections placed to right but not in the same line as command and it allows you to copy the command and output without environmental disclosure.
+
+* Full customization. Change colors, add sections with info you need.
+
+
 ## Install
 ```
 xpip install -U xontrib-prompt-bar
