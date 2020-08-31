@@ -29,7 +29,7 @@ To customize the appearance of the fields on the bar you can use wrappers:
 * Also you can create your own fields and wrapper. See the section below.
 
 ### Add custom fields and wrappers
-How to add two new fields called `my_left_custom` and `my_left_custom` and one new wrapper called `brackets`.
+How to add two new fields called `my_left_custom` and `my_right_custom` and one new wrapper called `brackets`.
 ```python
 $PROMPT_FIELDS['my_left_custom'] = 'Hello left!'
 $PROMPT_FIELDS['my_right_custom'] = lambda: '>'*3 + ' {YELLOW}Hello right!'
