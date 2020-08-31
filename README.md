@@ -52,4 +52,4 @@ It will be great if it will be reimplemented as shown in awesome [example from J
 
 ## Additional links
 * [xonsh default fields and colors notation](https://xon.sh/tutorial.html#customizing-the-prompt)
-* [Meaning of git status symbols ](https://xon.sh/envvars.html#xonsh-gitstatus)
+* [Meaning of git status symbols](https://xon.sh/envvars.html#xonsh-gitstatus) (●×+⚑✓↑↓)
