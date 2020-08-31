@@ -18,7 +18,7 @@ Features:
 
 * The sections placed to right but not in the same line as command and it allows you to copy the command and output without environmental disclosure.
 
-* Full customization. Change colors, add sections with info you need.
+* Full customization. Change colors, add sections with info you need easily with Python.
 
 
 ## Install
