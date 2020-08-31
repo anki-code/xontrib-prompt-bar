@@ -62,5 +62,16 @@ Result:
 * [xonsh default fields and colors notation](https://xon.sh/tutorial.html#customizing-the-prompt)
 * [Meaning of git status symbols](https://xon.sh/envvars.html#xonsh-gitstatus) (●×+⚑✓↑↓)
 
+## Known issues
+### Spaces in the copied and pasted command line
+Please update [prompt_toolkit](https://github.com/prompt-toolkit/python-prompt-toolkit) to 3.0.7+ version:
+```bash
+$ xonfig | grep prompt
+| prompt toolkit   | 3.0.3           |
+| shell type       | prompt_toolkit  |
+
+$ pip install -U prompt_toolkit
+```
+
 ## Future
 It will be great if it will be reimplemented as shown in awesome [example from Jonathan Slenders](https://github.com/prompt-toolkit/python-prompt-toolkit/blob/master/examples/prompts/fancy-zsh-prompt.py). xonsh and prompt_toolkit guru wanted :)
