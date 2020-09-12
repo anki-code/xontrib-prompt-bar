@@ -74,4 +74,6 @@ $ pip install -U prompt_toolkit
 ```
 
 ## Future
-It will be great if it will be reimplemented as shown in awesome [example from Jonathan Slenders](https://github.com/prompt-toolkit/python-prompt-toolkit/blob/master/examples/prompts/fancy-zsh-prompt.py). xonsh and prompt_toolkit guru wanted :)
+Asynchronous section rendering:
+* [Use threads to offload prompt sections - xonsh/pull/3758](https://github.com/xonsh/xonsh/pull/3758)
+* [Awesome example from Jonathan Slenders](https://github.com/prompt-toolkit/python-prompt-toolkit/blob/master/examples/prompts/fancy-zsh-prompt.py)
