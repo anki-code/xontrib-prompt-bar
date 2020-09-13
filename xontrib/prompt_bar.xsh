@@ -79,7 +79,15 @@ def _prompt_bar():
     rp = _remove_colors(rpc)
 
     w = ' ' * ( int(cols) - len(lp) - len(rp) )
-    return f'{_BARBG}{_BARFG}{lpc}{_BARBG}{_BARFG}{w}{rpc}'
+    
+    nl = '\n'
+    try:
+        if len(__xonsh__.history) and __xonsh__.history[-1].cmd.strip() == 'clear':
+            nl = ''
+    except:
+        pass
+    
+    return f'{nl}{_BARBG}{_BARFG}{lpc}{_BARBG}{_BARFG}{w}{rpc}'
 
 $PROMPT_FIELDS['prompt_bar'] = _prompt_bar
-$PROMPT="\n{prompt_bar}\n{WHITE}{prompt_end}{NO_COLOR} "
+$PROMPT="{prompt_bar}\n{WHITE}{prompt_end}{NO_COLOR} "
