@@ -3,14 +3,13 @@ The bar theme for <a href="https://xon.sh">xonsh shell</a>.
 </p>
 
 <p align="center">  
-If you like the idea of bar theme click ⭐ on the repo and stay tuned.
-</p>
-
-<p align="center">  
 <img src='https://raw.githubusercontent.com/anki-code/xontrib-prompt-bar/master/static/Demo.png' alt='[Demo]'>
 <sup><i>Screenshot made in <a href="https://konsole.kde.org/">Konsole</a> with <code>$XONSH_COLOR_STYLE = "paraiso-dark"</code>.</i></sup>
 </p>
 
+<p align="center">  
+If you like the idea of bar theme click ⭐ on the repo and stay tuned.
+</p>
 
 Features:
 
