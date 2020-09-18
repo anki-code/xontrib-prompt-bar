@@ -78,3 +78,4 @@ $ pip install -U prompt_toolkit
 Asynchronous section rendering:
 * [Use threads to offload prompt sections - xonsh/pull/3758](https://github.com/xonsh/xonsh/pull/3758)
 * [Awesome example from Jonathan Slenders](https://github.com/prompt-toolkit/python-prompt-toolkit/blob/master/examples/prompts/fancy-zsh-prompt.py)
+* In the original concept command line should have bright color (i.e. lime color) to be most outstanding. This is omitted because of syntax highlighting in xonsh. But the best way is to have ability to set static bright color.
