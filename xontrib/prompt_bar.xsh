@@ -82,7 +82,7 @@ def _prompt_bar():
     
     nl = '\n'
     try:
-        if len(__xonsh__.history) and __xonsh__.history[-1].cmd.strip() in ['clear','']:
+        if len(__xonsh__.history) == 0 or __xonsh__.history[-1].cmd.strip() in ['clear','']:
             nl = ''
     except:
         pass
