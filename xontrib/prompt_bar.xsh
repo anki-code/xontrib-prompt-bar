@@ -80,14 +80,11 @@ def _prompt_bar():
 
     w = ' ' * ( int(cols) - len(lp) - len(rp) )
     
-    nl = '\n'
-    try:
-        if len(__xonsh__.history) == 0 or __xonsh__.history[-1].cmd.strip() in ['clear','']:
-            nl = ''
-    except:
-        pass
-    
-    return f'{nl}{_BARBG}{_BARFG}{lpc}{_BARBG}{_BARFG}{w}{rpc}'
+    return f'{_BARBG}{_BARFG}{lpc}{_BARBG}{_BARFG}{w}{rpc}'
+
+@events.on_postcommand
+def _(**kwargs):
+    print('')
 
 $PROMPT_FIELDS['prompt_bar'] = _prompt_bar
 $PROMPT="{prompt_bar}\n{WHITE}{prompt_end}{NO_COLOR} "
