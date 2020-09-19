@@ -1,5 +1,5 @@
 <p align="center">  
-The bar theme for <a href="https://xon.sh">xonsh shell</a>.
+    The bar prompt for the <a href="https://xon.sh">xonsh shell</a> with customizable sections.
 </p>
 
 <p align="center">  
