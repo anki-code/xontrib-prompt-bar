@@ -15,7 +15,7 @@ _BARFG = __xonsh__.env.get('XONTRIB_PROMPT_BAR_FG', '{#AAA}')
 _SECTION_BG = __xonsh__.env.get('XONTRIB_PROMPT_BAR_SECTION_BG', '{BACKGROUND_#444}')
 _SECTION_FG = __xonsh__.env.get('XONTRIB_PROMPT_BAR_SECTION_FG', '{#CCC}')
 _ACCENT_FG = __xonsh__.env.get('XONTRIB_PROMPT_BAR_ACCENT_FG', '{BOLD_#DDD}')
-_NOC = '{NO_COLOR}'
+_NOC = '{RESET}'
 
 def _remove_colors(s):
     if s is None:
@@ -87,4 +87,4 @@ def _(**kwargs):
     print('')
 
 $PROMPT_FIELDS['prompt_bar'] = _prompt_bar
-$PROMPT="{prompt_bar}\n{WHITE}{prompt_end}{NO_COLOR} "
+$PROMPT="{prompt_bar}\n{WHITE}{prompt_end}{RESET} "
