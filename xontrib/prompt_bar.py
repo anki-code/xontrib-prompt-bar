@@ -26,10 +26,11 @@ def _field_date_time_tz():
     t = time.strftime('%y-%m-%d %H:%M:%S%z', time.localtime())
     return t[:-2] if t[-2:] == '00' else t
 
-$PROMPT_FIELDS['env_prefix'] = $PROMPT_FIELDS['env_postfix'] = ''
-$PROMPT_FIELDS['cwd_abs'] = lambda: str(Path($PROMPT_FIELDS['cwd']()).expanduser())
-$PROMPT_FIELDS['date_time_tz'] = _field_date_time_tz
-$PROMPT_FIELDS['gitstatus_noc'] = lambda: _remove_colors($PROMPT_FIELDS['gitstatus']())
+
+__xonsh__.env['PROMPT_FIELDS']['env_prefix'] = __xonsh__.env['PROMPT_FIELDS']['env_postfix'] = ''
+__xonsh__.env['PROMPT_FIELDS']['cwd_abs'] = lambda: str(Path(__xonsh__.env['PROMPT_FIELDS']['cwd']()).expanduser())
+__xonsh__.env['PROMPT_FIELDS']['date_time_tz'] = _field_date_time_tz
+__xonsh__.env['PROMPT_FIELDS']['gitstatus_noc'] = lambda: _remove_colors(__xonsh__.env['PROMPT_FIELDS']['gitstatus']())
 
 _wrappers = {
     'accent': lambda v: f'{_ACCENT_FG}{v}',
@@ -48,11 +49,11 @@ def _format_sections(s):
         wrapper = None
         if '#' in key:
             real_key, wrapper = key.split('#')
-        if real_key in $PROMPT_FIELDS:
-            if callable($PROMPT_FIELDS[real_key]):
-                v = $PROMPT_FIELDS[real_key]()
+        if real_key in __xonsh__.env['PROMPT_FIELDS']:
+            if callable(__xonsh__.env['PROMPT_FIELDS'][real_key]):
+                v = __xonsh__.env['PROMPT_FIELDS'][real_key]()
             else:
-                v = $PROMPT_FIELDS[real_key]
+                v = __xonsh__.env['PROMPT_FIELDS'][real_key]
             if v is None or v == '':
                 map[key] = ''
             elif wrapper in _wrappers:
@@ -86,5 +87,5 @@ def _prompt_bar():
 def _(**kwargs):
     print('')
 
-$PROMPT_FIELDS['prompt_bar'] = _prompt_bar
-$PROMPT="{prompt_bar}\n{WHITE}{prompt_end}{RESET} "
+__xonsh__.env['PROMPT_FIELDS']['prompt_bar'] = _prompt_bar
+__xonsh__.env['PROMPT'] = "{prompt_bar}\n{WHITE}{prompt_end}{RESET} "
