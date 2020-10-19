@@ -9,7 +9,7 @@ except (IOError, OSError):
 
 setup(
     name='xontrib-prompt-bar',
-    version='0.2.1',
+    version='0.2.2',
     license='BSD',
     author='anki',
     author_email='author@example.com',
@@ -17,7 +17,6 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     python_requires='>=3.6',
-    install_requires=['xonsh>=0.9.23'],
     packages=['xontrib'],
     package_dir={'xontrib': 'xontrib'},
     package_data={'xontrib': ['*.py']},
