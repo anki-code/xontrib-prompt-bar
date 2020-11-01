@@ -9,7 +9,7 @@ except (IOError, OSError):
 
 setup(
     name='xontrib-prompt-bar',
-    version='0.2.2',
+    version='0.2.3',
     license='BSD',
     author='anki',
     author_email='author@example.com',
@@ -17,8 +17,11 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     python_requires='>=3.6',
-    packages=['xontrib'],
-    package_dir={'xontrib': 'xontrib'},
+    packages=[
+        'xontrib',
+        'xontrib2'  # https://github.com/anki-code/xonsh-operators-proposal/blob/main/XEP-2.rst
+    ],
+    package_dir={'xontrib': 'xontrib', 'xontrib2': 'xontrib'},
     package_data={'xontrib': ['*.py']},
     platforms='any',
     url='https://github.com/anki-code/xontrib-prompt-bar',
