@@ -23,7 +23,7 @@ Features:
 
 
 ## Install
-```
+```python
 xpip install -U xontrib-prompt-bar
 echo 'xontrib load prompt_bar' >> ~/.xonshrc
 # Reload xonsh
