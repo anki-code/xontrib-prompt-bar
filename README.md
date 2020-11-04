@@ -60,26 +60,16 @@ Result:
 <img src='https://raw.githubusercontent.com/anki-code/xontrib-prompt-bar/master/static/Demo-custom.png' alt='[Demo custom fields]'>
 
 ### Additional links
+* [Asynchronous section rendering](https://xon.sh/envvars.html#enable-async-prompt)
 * [xonsh default fields and colors notation](https://xon.sh/tutorial.html#customizing-the-prompt)
 * [Meaning of git status symbols](https://xon.sh/envvars.html#xonsh-gitstatus) (●×+⚑✓↑↓)
+* [Awesome example of rewriting the theme from Jonathan Slenders](https://github.com/prompt-toolkit/python-prompt-toolkit/blob/master/examples/prompts/fancy-zsh-prompt.py)
 
 ## Known issues
 ### Spaces in the copied and pasted command line
-Please update [prompt_toolkit](https://github.com/prompt-toolkit/python-prompt-toolkit) to 3.0.7+ version:
-```bash
-$ xonfig | grep prompt
-| prompt toolkit   | 3.0.3           |
-| shell type       | prompt_toolkit  |
+Please update [prompt_toolkit](https://github.com/prompt-toolkit/python-prompt-toolkit) 
+to 3.0.7+ version via `pip install -U prompt_toolkit`.
 
-$ pip install -U prompt_toolkit
-```
-
-## Future
-Asynchronous section rendering:
-* [Use threads to offload prompt sections - xonsh/pull/3758](https://github.com/xonsh/xonsh/pull/3758)
-* [Awesome example from Jonathan Slenders](https://github.com/prompt-toolkit/python-prompt-toolkit/blob/master/examples/prompts/fancy-zsh-prompt.py)
-* In the original concept command line should have bright color (i.e. lime color) to be most outstanding. This is omitted because of syntax highlighting in xonsh. But the best way is to have ability to set static bright color.
-
-## Links 
+## Credits 
 * This package is the part of [ergopack](https://github.com/anki-code/xontrib-ergopack) - the pack of ergonomic xontribs.
 * This package was created with [xontrib cookiecutter template](https://github.com/xonsh/xontrib-cookiecutter).
