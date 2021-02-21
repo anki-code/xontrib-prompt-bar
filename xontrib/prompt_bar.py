@@ -31,6 +31,7 @@ __xonsh__.env['PROMPT_FIELDS']['env_prefix'] = __xonsh__.env['PROMPT_FIELDS']['e
 __xonsh__.env['PROMPT_FIELDS']['cwd_abs'] = lambda: str(Path(__xonsh__.env['PROMPT_FIELDS']['cwd']()).expanduser())
 __xonsh__.env['PROMPT_FIELDS']['date_time_tz'] = _field_date_time_tz
 __xonsh__.env['PROMPT_FIELDS']['gitstatus_noc'] = lambda: _remove_colors(__xonsh__.env['PROMPT_FIELDS']['gitstatus']())
+__xonsh__.env['PROMPT_FIELDS']['screens'] = lambda: ', '.join([l.split('\t')[1].split('.')[1] for l in $(screen -list).splitlines() if '\t' in l])
 
 _wrappers = {
     'accent': lambda v: f'{_ACCENT_FG}{v}',
