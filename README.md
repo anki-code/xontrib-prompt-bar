@@ -32,7 +32,13 @@ echo 'xontrib load prompt_bar' >> ~/.xonshrc
 ## Use cases
 
 ### Fields and colors
-The bar theme supports [xonsh default fields and colors notation](https://xon.sh/tutorial.html#customizing-the-prompt).
+
+The bar theme supports fields:
+* [xonsh default fields and colors notation](https://xon.sh/tutorial.html#customizing-the-prompt)
+* `screens` - list of the windows that created by [screen window manager](https://www.gnu.org/software/screen/manual/screen.html#Overview)
+* `cwd_abs` - current absolute path (`~` disabled)
+* `date_time_tz` - date and time with timezone i.e. `21-12-25 18:00:00-01`
+* `gitstatus_noc` - the same as xonsh `gitstatus` but without colors
 
 To customize the appearance of the fields on the bar you can use wrappers:
 * `{hostname}` - no wrapper
