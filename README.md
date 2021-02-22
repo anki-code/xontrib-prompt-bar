@@ -70,7 +70,7 @@ Result:
 * [xonsh default fields and colors notation](https://xon.sh/tutorial.html#customizing-the-prompt)
 * [Meaning of git status symbols](https://xon.sh/envvars.html#xonsh-gitstatus) (●×+⚑✓↑↓)
 * [Awesome example of rewriting the theme from Jonathan Slenders](https://github.com/prompt-toolkit/python-prompt-toolkit/blob/master/examples/prompts/fancy-zsh-prompt.py)
-* [Customization the colors](https://github.com/xonsh/xonsh/pull/3878#issuecomment-707982828)
+* [Customization the colors in the input line](https://github.com/xonsh/xonsh/pull/3878#issuecomment-707982828)
 
 ## Known issues
 ### Spaces in the copied and pasted command line
