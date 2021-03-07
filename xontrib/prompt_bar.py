@@ -3,6 +3,7 @@ import re
 import time
 from pathlib import Path
 from string import Formatter
+from xonsh.tools import is_superuser
 
 """
 Supported colors: https://xon.sh/tutorial.html#customizing-the-prompt
@@ -26,7 +27,7 @@ def _field_date_time_tz():
     t = time.strftime('%y-%m-%d %H:%M:%S%z', time.localtime())
     return t[:-2] if t[-2:] == '00' else t
 
-
+__xonsh__.env['PROMPT_FIELDS']['prompt_end_xonsh'] = "#" if is_superuser() else "@"
 __xonsh__.env['PROMPT_FIELDS']['env_prefix'] = __xonsh__.env['PROMPT_FIELDS']['env_postfix'] = ''
 __xonsh__.env['PROMPT_FIELDS']['cwd_abs'] = lambda: str(Path(__xonsh__.env['PROMPT_FIELDS']['cwd']()).expanduser())
 __xonsh__.env['PROMPT_FIELDS']['date_time_tz'] = _field_date_time_tz
@@ -89,4 +90,4 @@ def _(**kwargs):
     print('')
 
 __xonsh__.env['PROMPT_FIELDS']['prompt_bar'] = _prompt_bar
-__xonsh__.env['PROMPT'] = "{prompt_bar}\n{WHITE}{prompt_end}{RESET} "
+__xonsh__.env['PROMPT'] = "{prompt_bar}\n{WHITE}{prompt_end_xonsh}{RESET} "
