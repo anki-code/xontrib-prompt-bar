@@ -13,6 +13,8 @@ If you like the idea of bar theme click ⭐ on the repo and stay tuned.
 
 Features:
 
+* Zero dependencies. You don't need to install additional packages.
+
 * Clear concept. The bar is a delimiter and information panel. Three attention aspects: command line and path, output, sections with additional info.
 
 * The command beginning has fixed position to have a large command line every time and avoid mess of attention.
