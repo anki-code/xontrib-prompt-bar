@@ -74,7 +74,7 @@ Result:
 Manual calling example:
 ```python
 # First of all create a starship config to return sections in one line
-$STARSHIP_CONFIG = '~/.config/starship_xonsh_right.toml' 
+$STARSHIP_CONFIG = p'~/.config/starship_xonsh_right.toml' 
 $PROMPT_FIELDS['starship_right'] = lambda: __xonsh__.subproc_captured_stdout(['starship', 'prompt']).replace('\n', ' ').strip()
 $XONTRIB_PROMPT_BAR_RIGHT = '{starship_right#noesc_strip}'
 xontrib load prompt_bar
