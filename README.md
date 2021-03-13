@@ -79,7 +79,9 @@ $PROMPT_FIELDS['starship_right'] = lambda: __xonsh__.subproc_captured_stdout(['s
 $XONTRIB_PROMPT_BAR_RIGHT = '{starship_right#noesc_strip}'
 xontrib load prompt_bar
 ```
+
 Or for more complete support you can use [xontrib-prompt-starship](https://github.com/anki-code/xontrib-prompt-starship):
+
 ```python
 # First of all create a starship config to return sections in one line
 $XONTRIB_PROMPT_STARSHIP_RIGHT_CONFIG = "~/.config/starship_xonsh_right.toml"
@@ -88,6 +90,10 @@ xontrib load prompt_starship
 $XONTRIB_PROMPT_BAR_RIGHT = '{starship_right#noesc_strip}'
 xontrib load prompt_bar
 ```
+
+Result:
+
+<img src="https://raw.githubusercontent.com/anki-code/xontrib-prompt-bar/master/static/xontrib-prompt-bar-starship.png" alt="Prompt bar with starship sections.">
 
 
 ### Additional links
