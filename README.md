@@ -71,16 +71,7 @@ Result:
 
 ### Using [Starship](https://github.com/starship/starship) cross-shell prompt to rendering right sections
 
-Manual calling example:
-```python
-# First of all create a starship config to return sections in one line
-$STARSHIP_CONFIG = p'~/.config/starship_xonsh_right.toml' 
-$PROMPT_FIELDS['starship_right'] = lambda: __xonsh__.subproc_captured_stdout(['starship', 'prompt']).replace('\n', ' ').strip()
-$XONTRIB_PROMPT_BAR_RIGHT = '{starship_right#noesc_strip}'
-xontrib load prompt_bar
-```
-
-Or for more complete support you can use [xontrib-prompt-starship](https://github.com/anki-code/xontrib-prompt-starship):
+Barship using [xontrib-prompt-starship](https://github.com/anki-code/xontrib-prompt-starship):
 
 ```python
 # First of all create a starship config to return sections in one line
