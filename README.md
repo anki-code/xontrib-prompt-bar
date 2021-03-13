@@ -48,6 +48,7 @@ To customize the appearance of the fields on the bar you can use wrappers:
 * `{hostname#accent}` - bold font and lighter color
 * `{starship#noesc}` - remove ANSI escape characters (colors)
 * `{starship#noesc_strip}` - remove ANSI escape characters (colors) and strip (remove white spaces in the begin and end)
+* `{gitstatus#nocolorx}` - remove xonsh color tags i.e. `{RED}` or `{#00ff00}`
 * Also you can create your own fields and wrapper. See the section below.
 
 ### Add custom fields and wrappers
