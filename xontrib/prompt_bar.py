@@ -87,9 +87,11 @@ def _format_sections(s):
                 v = __xonsh__.env['PROMPT_FIELDS'][real_key]()
             else:
                 v = __xonsh__.env['PROMPT_FIELDS'][real_key]
+
             if v is None or v == '':
                 map[key] = ''
             elif wrappers:
+                map[key] = v
                 for wrapper in wrappers:
                     if wrapper in _wrappers:
                         map[key] = _wrappers[wrapper](map[key])
