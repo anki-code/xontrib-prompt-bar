@@ -23,6 +23,7 @@ def _remove_colors(s):
         return ''
     return re.sub('{([A-Z0-9#_]+?)}', '', s)
 
+# https://stackoverflow.com/a/14693789/14470020
 _ansi_escape = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
 def _remove_escape(txt):
     return _ansi_escape.sub('', txt)
