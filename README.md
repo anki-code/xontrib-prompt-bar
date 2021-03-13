@@ -46,6 +46,8 @@ To customize the appearance of the fields on the bar you can use wrappers:
 * `{hostname}` - no wrapper
 * `{hostname#section}` - add backlight for the text
 * `{hostname#accent}` - bold font and lighter color
+* `{starship#noesc}` - remove ANSI escape characters (colors)
+* `{starship#noesc_strip}` - remove ANSI escape characters (colors) and strip (remove white spaces in the begin and end)
 * Also you can create your own fields and wrapper. See the section below.
 
 ### Add custom fields and wrappers
@@ -74,7 +76,7 @@ Manual calling example:
 # First of all create a starship config to return sections in one line
 $STARSHIP_CONFIG = '~/.config/starship_xonsh_right.toml' 
 $PROMPT_FIELDS['starship'] = lambda: __xonsh__.subproc_captured_stdout(['starship', 'prompt']).replace('\n', ' ').strip()
-$XONTRIB_PROMPT_BAR_RIGHT = '{starship#noesc}'
+$XONTRIB_PROMPT_BAR_RIGHT = '{starship#noesc_strip}'
 xontrib load prompt_bar
 ```
 Or for more complete support you can use [xontrib-prompt-starship](https://github.com/anki-code/xontrib-prompt-starship):
@@ -83,7 +85,7 @@ Or for more complete support you can use [xontrib-prompt-starship](https://githu
 $XONTRIB_PROMPT_STARSHIP_RIGHT_CONFIG = "~/.config/starship_xonsh_right.toml"
 $XONTRIB_PROMPT_STARSHIP_REPLACE_PROMPT = False
 xontrib load prompt_starship
-$XONTRIB_PROMPT_BAR_RIGHT = '{starship_right#noesc}'
+$XONTRIB_PROMPT_BAR_RIGHT = '{starship_right#noesc_strip}'
 xontrib load prompt_bar
 ```
 
