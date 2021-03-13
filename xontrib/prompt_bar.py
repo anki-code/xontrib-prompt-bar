@@ -64,8 +64,9 @@ _wrappers = {
     'accent': lambda v: f'{_ACCENT_FG}{v}',
     'section': lambda v: f'{_SECTION_BG}{_SECTION_FG} {v} {_NOC}{_BARBG}{_BARFG}',
     'noesc': lambda v: _remove_escape(v),
-    'noesc_strip': lambda v: _remove_escape(v).strip(),
-    'nocolorx': lambda v: _remove_colors(v)
+    'nocolorx': lambda v: _remove_colors(v),
+    'nonl': lambda v: v.replace('\n', ' '),
+    'strip': lambda v: v.strip(),
 }
 
 for k,f in __xonsh__.env.get('XONTRIB_PROMPT_BAR_WRAPPERS', {}).items():
@@ -77,9 +78,10 @@ def _format_sections(s):
     map = {}
     for i, key in enumerate(sections):
         real_key = key
-        wrapper = None
+        wrappers = None
         if '#' in key:
-            real_key, wrapper = key.split('#')
+            real_key, wrappers = key.split('#', 1)
+            wrappers = wrappers.split('#')
         if real_key in __xonsh__.env['PROMPT_FIELDS']:
             if callable(__xonsh__.env['PROMPT_FIELDS'][real_key]):
                 v = __xonsh__.env['PROMPT_FIELDS'][real_key]()
@@ -87,8 +89,10 @@ def _format_sections(s):
                 v = __xonsh__.env['PROMPT_FIELDS'][real_key]
             if v is None or v == '':
                 map[key] = ''
-            elif wrapper in _wrappers:
-                map[key] = _wrappers[wrapper](v)
+            elif wrappers:
+                for wrapper in wrappers:
+                    if wrapper in _wrappers:
+                        map[key] = _wrappers[wrapper](map[key])
             else:
                 map[key] = str(v)
 
