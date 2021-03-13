@@ -53,7 +53,8 @@ __xonsh__.env['PROMPT_FIELDS']['screens'] = _screens
 _wrappers = {
     'accent': lambda v: f'{_ACCENT_FG}{v}',
     'section': lambda v: f'{_SECTION_BG}{_SECTION_FG} {v} {_NOC}{_BARBG}{_BARFG}',
-    'noesc': lambda v: _remove_escape(v)
+    'noesc': lambda v: _remove_escape(v),
+    'noesc_strip': lambda v: _remove_escape(v).strip()
 }
 
 for k,f in __xonsh__.env.get('XONTRIB_PROMPT_BAR_WRAPPERS', {}).items():
