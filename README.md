@@ -86,9 +86,8 @@ Or for more complete support you can use [xontrib-prompt-starship](https://githu
 # First of all create a starship config to return sections in one line
 $XONTRIB_PROMPT_STARSHIP_RIGHT_CONFIG = "~/.config/starship_xonsh_right.toml"
 $XONTRIB_PROMPT_STARSHIP_REPLACE_PROMPT = False
-xontrib load prompt_starship
 $XONTRIB_PROMPT_BAR_RIGHT = '{starship_right#noesc_strip}'
-xontrib load prompt_bar
+xontrib load prompt_starship prompt_bar
 ```
 
 Result:
