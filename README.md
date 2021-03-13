@@ -67,7 +67,7 @@ Result:
 
 <img src='https://raw.githubusercontent.com/anki-code/xontrib-prompt-bar/master/static/Demo-custom.png' alt='[Demo custom fields]'>
 
-### Using [Starship](https://github.com/starship/starship) cross-shell prompt for rendering sections
+### Using [Starship](https://github.com/starship/starship) cross-shell prompt to rendering right sections
 
 Manual calling example:
 ```python
