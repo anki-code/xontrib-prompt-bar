@@ -72,9 +72,9 @@ Result:
 Manual calling example:
 ```python
 # First of all create a starship config to return sections in one line
-$STARSHIP_CONFIG = '~/.config/starship_right_sections.toml' 
+$STARSHIP_CONFIG = '~/.config/starship_xonsh_right.toml' 
 $PROMPT_FIELDS['starship'] = lambda: __xonsh__.subproc_captured_stdout(['starship', 'prompt']).replace('\n', ' ').strip()
-$XONTRIB_PROMPT_BAR_RIGHT = '{starship}'
+$XONTRIB_PROMPT_BAR_RIGHT = '{starship#noesc}'
 xontrib load prompt_bar
 ```
 Or for more complete support you can use [xontrib-prompt-starship](https://github.com/anki-code/xontrib-prompt-starship):
@@ -83,7 +83,7 @@ Or for more complete support you can use [xontrib-prompt-starship](https://githu
 $XONTRIB_PROMPT_STARSHIP_RIGHT_CONFIG = "~/.config/starship_xonsh_right.toml"
 $XONTRIB_PROMPT_STARSHIP_REPLACE_PROMPT = False
 xontrib load prompt_starship
-$XONTRIB_PROMPT_BAR_RIGHT = '{starship_right}'
+$XONTRIB_PROMPT_BAR_RIGHT = '{starship_right#noesc}'
 xontrib load prompt_bar
 ```
 
