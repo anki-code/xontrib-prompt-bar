@@ -42,13 +42,15 @@ The bar theme supports fields:
 * `date_time_tz` - date and time with timezone i.e. `21-12-25 18:00:00-01`
 * `gitstatus_noc` - the same as xonsh `gitstatus` but without colors
 
-To customize the appearance of the fields on the bar you can use wrappers:
+To customize the appearance of the fields on the bar you can use wrappers and chaining them:
 * `{hostname}` - no wrapper
 * `{hostname#section}` - add backlight for the text
-* `{hostname#accent}` - bold font and lighter color
+* `{cwd_abs#accent}` - bold font and lighter color
 * `{starship#noesc}` - remove ANSI escape characters (colors)
-* `{starship#noesc_strip}` - remove ANSI escape characters (colors) and strip (remove white spaces in the begin and end)
+* `{myoutput#strip}` - remove white spaces in the begin and end
+* `{myoutput#nonl}` - replace new line symbols to spaces
 * `{gitstatus#nocolorx}` - remove xonsh color tags i.e. `{RED}` or `{#00ff00}`
+* `{starship#noesc#nonl#strip}` - chaining wrappers
 * Also you can create your own fields and wrapper. See the section below.
 
 ### Add custom fields and wrappers
@@ -78,7 +80,7 @@ Barship using [xontrib-prompt-starship](https://github.com/anki-code/xontrib-pro
 # First of all create a starship config to return sections in one line
 $XONTRIB_PROMPT_STARSHIP_RIGHT_CONFIG = "~/.config/starship_xonsh_right.toml"
 $XONTRIB_PROMPT_STARSHIP_REPLACE_PROMPT = False
-$XONTRIB_PROMPT_BAR_RIGHT = '{starship_right#noesc_strip}'
+$XONTRIB_PROMPT_BAR_RIGHT = '{starship_right#noesc#nonl#strip}'
 xontrib load prompt_starship prompt_bar
 ```
 
