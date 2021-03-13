@@ -43,14 +43,17 @@ The bar theme supports fields:
 * `gitstatus_noc` - the same as xonsh `gitstatus` but without colors
 
 To customize the appearance of the fields on the bar you can use wrappers and chaining them:
-* `{hostname}` - no wrapper
-* `{hostname#section}` - add backlight for the text
-* `{cwd_abs#accent}` - bold font and lighter color
-* `{starship#noesc}` - remove ANSI escape characters (colors)
-* `{myoutput#strip}` - remove white spaces in the begin and end
-* `{myoutput#nonl}` - replace new line symbols to spaces
-* `{gitstatus#nocolorx}` - remove xonsh color tags i.e. `{RED}` or `{#00ff00}`
-* `{starship#noesc#nonl#strip}` - chaining wrappers
+```python
+$XONTRIB_PROMPT_BAR_RIGHT = '{hostname#accent#section}'
+xontrib load prompt_bar
+```
+Available wrappers:
+* `section` - add backlight for the text
+* `accent` - bold font and lighter color
+* `noesc` - remove ANSI escape characters (colors)
+* `strip` - remove white spaces in the begin and end
+* `nonl` - replace new line symbols to spaces
+* `nocolorx` - remove xonsh color tags i.e. `{RED}` or `{#00ff00}`
 * Also you can create your own fields and wrapper. See the section below.
 
 ### Add custom fields and wrappers
