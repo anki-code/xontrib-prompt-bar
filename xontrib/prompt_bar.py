@@ -28,6 +28,16 @@ _ansi_escape = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
 def _remove_escape(txt):
     return _ansi_escape.sub('', txt)
 
+# https://stackoverflow.com/a/49986645
+def _replace_emoji(text, replace_char=r'EE'):
+    regrex_pattern = re.compile(pattern = "["
+        u"\U0001F600-\U0001F64F"  # emoticons
+        u"\U0001F300-\U0001F5FF"  # symbols & pictographs
+        u"\U0001F680-\U0001F6FF"  # transport & map symbols
+        u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+                           "]+", flags = re.UNICODE)
+    return regrex_pattern.sub(replace_char, text)
+
 def _field_date_time_tz():
     t = time.strftime('%y-%m-%d %H:%M:%S%z', time.localtime())
     return t[:-2] if t[-2:] == '00' else t
@@ -96,8 +106,8 @@ def _prompt_bar():
 
     lpc = _format_sections(_LEFT)
     rpc = _format_sections(_RIGHT)
-    lp = _remove_colors(lpc)
-    rp = _remove_colors(rpc)
+    lp = _replace_emoji(_remove_colors(lpc))
+    rp = _replace_emoji(_remove_colors(rpc))
 
     w = ' ' * ( int(cols) - len(lp) - len(rp) )
     
