@@ -23,6 +23,10 @@ def _remove_colors(s):
         return ''
     return re.sub('{([A-Z0-9#_]+?)}', '', s)
 
+_ansi_escape = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
+def _remove_escape(txt):
+    return _ansi_escape.sub('', txt)
+
 def _field_date_time_tz():
     t = time.strftime('%y-%m-%d %H:%M:%S%z', time.localtime())
     return t[:-2] if t[-2:] == '00' else t
@@ -47,7 +51,8 @@ __xonsh__.env['PROMPT_FIELDS']['screens'] = _screens
 
 _wrappers = {
     'accent': lambda v: f'{_ACCENT_FG}{v}',
-    'section': lambda v: f'{_SECTION_BG}{_SECTION_FG} {v} {_NOC}{_BARBG}{_BARFG}'
+    'section': lambda v: f'{_SECTION_BG}{_SECTION_FG} {v} {_NOC}{_BARBG}{_BARFG}',
+    'noesc': lambda v: _remove_escape(v)
 }
 
 for k,f in __xonsh__.env.get('XONTRIB_PROMPT_BAR_WRAPPERS', {}).items():
