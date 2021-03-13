@@ -67,6 +67,18 @@ Result:
 
 <img src='https://raw.githubusercontent.com/anki-code/xontrib-prompt-bar/master/static/Demo-custom.png' alt='[Demo custom fields]'>
 
+### Using cross-shells for rendering sections
+
+[Starship](https://github.com/starship/starship) example:
+```python
+# First of all create a starship config to return sections in one line
+$STARSHIP_CONFIG = '~/.config/starship_right_sections.toml' 
+$PROMPT_FIELDS['starship'] = lambda: __xonsh__.subproc_captured_stdout(['starship', 'prompt']).replace('\n', ' ').strip()
+$XONTRIB_PROMPT_BAR_RIGHT = '{starship}'
+xontrib load prompt_bar
+```
+
+
 ### Additional links
 * [Asynchronous section rendering](https://xon.sh/envvars.html#enable-async-prompt)
 * [xonsh default fields and colors notation](https://xon.sh/tutorial.html#customizing-the-prompt)
