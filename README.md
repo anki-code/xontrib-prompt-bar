@@ -60,7 +60,7 @@ $XONTRIB_PROMPT_BAR_WRAPPERS = {
     'brackets': lambda v: f'[{v}]'
 }
 
-$XONTRIB_PROMPT_BAR_LEFT = '{hostname}{user}{pwd#accent}{my_left_custom#brackets}'
+$XONTRIB_PROMPT_BAR_LEFT = '{hostname}{user}{cwd_abs#accent}{my_left_custom#brackets}'
 $XONTRIB_PROMPT_BAR_RIGHT = '{my_right_custom#section}{env_name#section}{gitstatus_noc#section}{date_time_tz}'
 
 xontrib load prompt_bar
