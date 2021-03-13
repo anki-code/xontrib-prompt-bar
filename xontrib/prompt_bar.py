@@ -32,7 +32,18 @@ __xonsh__.env['PROMPT_FIELDS']['env_prefix'] = __xonsh__.env['PROMPT_FIELDS']['e
 __xonsh__.env['PROMPT_FIELDS']['cwd_abs'] = lambda: str(Path(__xonsh__.env['PROMPT_FIELDS']['cwd']()).expanduser())
 __xonsh__.env['PROMPT_FIELDS']['date_time_tz'] = _field_date_time_tz
 __xonsh__.env['PROMPT_FIELDS']['gitstatus_noc'] = lambda: _remove_colors(__xonsh__.env['PROMPT_FIELDS']['gitstatus']())
-__xonsh__.env['PROMPT_FIELDS']['screens'] = lambda: ', '.join([l.split('\t')[1].split('.')[1] for l in __xonsh__.subproc_captured_stdout(['screen', '-ls']).splitlines() if '\t' in l])
+
+def _screens():
+    line = []
+    sty = None
+    for l in __xonsh__.subproc_captured_stdout(['screen', '-ls']).splitlines(): 
+        if '\t' in l:
+            screen_name = l.split('\t')[1].split('.')[1]
+            if sty is None:  # lazy load
+                sty = __xonsh__.env.get('STY', '.').split('.')[1]
+            line.append(f"({screen_name})" if sty == screen_name else screen_name)
+    return ', '.join(line)
+__xonsh__.env['PROMPT_FIELDS']['screens'] = _screens
 
 _wrappers = {
     'accent': lambda v: f'{_ACCENT_FG}{v}',
