@@ -102,7 +102,7 @@ Result:
 ## Known issues
 ### Spaces in the copied and pasted command line
 Please update [prompt_toolkit](https://github.com/prompt-toolkit/python-prompt-toolkit) 
-to 3.0.7+ version via `pip install -U prompt_toolkit`.
+to 3.0.7+ version via `python -m pip install -U prompt_toolkit`.
 
 ## Credits 
 * This package is the part of [ergopack](https://github.com/anki-code/xontrib-ergopack) - the pack of ergonomic xontribs.
