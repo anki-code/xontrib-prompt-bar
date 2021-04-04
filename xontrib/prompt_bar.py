@@ -6,16 +6,34 @@ from string import Formatter
 from xonsh.tools import is_superuser
 
 """
-Supported colors: https://xon.sh/tutorial.html#customizing-the-prompt
+Themes:
+ * Supported colors: https://xon.sh/tutorial.html#customizing-the-prompt
 """
+_pb_themes = {
+    'default': {
+        'left': '{hostname}{user}{cwd_abs#accent}',
+        'right': '{env_name#section}{gitstatus_noc#section}{date_time_tz}',
+        'bar_bg': '{BACKGROUND_#323232}',
+        'bar_fg': '{#AAA}',
+        'section_bg': '{BACKGROUND_#444}',
+        'section_fg': '{#CCC}',
+        'accent_fg': '{BOLD_#DDD}',
+    }
+}
 
-_LEFT = __xonsh__.env.get('XONTRIB_PROMPT_BAR_LEFT', '{hostname}{user}{cwd_abs#accent}')
-_RIGHT = __xonsh__.env.get('XONTRIB_PROMPT_BAR_RIGHT', '{env_name#section}{gitstatus_noc#section}{date_time_tz}')
-_BARBG = __xonsh__.env.get('XONTRIB_PROMPT_BAR_BG', '{BACKGROUND_#323232}')
-_BARFG = __xonsh__.env.get('XONTRIB_PROMPT_BAR_FG', '{#AAA}')
-_SECTION_BG = __xonsh__.env.get('XONTRIB_PROMPT_BAR_SECTION_BG', '{BACKGROUND_#444}')
-_SECTION_FG = __xonsh__.env.get('XONTRIB_PROMPT_BAR_SECTION_FG', '{#CCC}')
-_ACCENT_FG = __xonsh__.env.get('XONTRIB_PROMPT_BAR_ACCENT_FG', '{BOLD_#DDD}')
+_THEME = __xonsh__.env.get('XONTRIB_PROMPT_BAR_THEME', 'default')
+
+if type(_THEME) is dict:
+    _pb_themes['custom'] = _THEME
+    _THEME = 'custom'
+
+_LEFT = __xonsh__.env.get('XONTRIB_PROMPT_BAR_LEFT', _pb_themes[_THEME]['left'])
+_RIGHT = __xonsh__.env.get('XONTRIB_PROMPT_BAR_RIGHT', _pb_themes[_THEME]['right'])
+_BAR_BG = __xonsh__.env.get('XONTRIB_PROMPT_BAR_BG', _pb_themes[_THEME]['bar_bg'])
+_BAR_FG = __xonsh__.env.get('XONTRIB_PROMPT_BAR_FG', _pb_themes[_THEME]['bar_fg'])
+_SECTION_BG = __xonsh__.env.get('XONTRIB_PROMPT_BAR_SECTION_BG', _pb_themes[_THEME]['section_bg'])
+_SECTION_FG = __xonsh__.env.get('XONTRIB_PROMPT_BAR_SECTION_FG', _pb_themes[_THEME]['section_fg'])
+_ACCENT_FG = __xonsh__.env.get('XONTRIB_PROMPT_BAR_ACCENT_FG', _pb_themes[_THEME]['accent_fg'])
 _NOC = '{RESET}'
 
 def _remove_colors(s):
@@ -62,7 +80,7 @@ __xonsh__.env['PROMPT_FIELDS']['screens'] = _screens
 
 _wrappers = {
     'accent': lambda v: f'{_ACCENT_FG}{v}',
-    'section': lambda v: f'{_SECTION_BG}{_SECTION_FG} {v} {_NOC}{_BARBG}{_BARFG}',
+    'section': lambda v: f'{_SECTION_BG}{_SECTION_FG} {v} {_NOC}{_BAR_BG}{_BAR_FG}',
     'noesc': lambda v: _remove_escape(v),
     'nocolorx': lambda v: _remove_colors(v),
     'nonl': lambda v: v.replace('\n', ' '),
@@ -118,7 +136,7 @@ def _prompt_bar():
 
     w = ' ' * ( int(cols) - len(lp) - len(rp) )
     
-    return f'{_BARBG}{_BARFG}{lpc}{_BARBG}{_BARFG}{w}{rpc}'
+    return f'{_BAR_BG}{_BAR_FG}{lpc}{_BAR_BG}{_BAR_FG}{w}{rpc}'
 
 @events.on_postcommand
 def _(**kwargs):
