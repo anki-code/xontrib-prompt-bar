@@ -81,13 +81,13 @@ To change bar colors there is setting the theme:
 
 ```python
 $XONTRIB_PROMPT_BAR_THEME = {
-    'left': '{hostname}{user}{cwd_abs#accent}',
-    'right': '{env_name#section}{gitstatus_noc#section}{date_time_tz}',
-    'bar_bg': '{BACKGROUND_#FF0000}',
-    'bar_fg': '{#AAA}',
+    'left':       '{hostname}{user}{cwd_abs#accent}',
+    'right':      '{env_name#section}{gitstatus_noc#section}{date_time_tz}',
+    'bar_bg':     '{BACKGROUND_#FF0000}',
+    'bar_fg':     '{#AAA}',
     'section_bg': '{BACKGROUND_#444}',
     'section_fg': '{#CCC}',
-    'accent_fg': '{BOLD_#DDD}',
+    'accent_fg':  '{BOLD_#DDD}',
 }
 xontrib load prompt_bar
 ```
