@@ -33,7 +33,7 @@ echo 'xontrib load prompt_bar' >> ~/.xonshrc
 
 ## Use cases
 
-### Fields and colors
+### Fields
 
 The bar theme supports fields:
 * [xonsh default fields and colors notation](https://xon.sh/tutorial.html#customizing-the-prompt)
@@ -74,6 +74,23 @@ xontrib load prompt_bar
 Result:
 
 <img src='https://raw.githubusercontent.com/anki-code/xontrib-prompt-bar/master/static/Demo-custom.png' alt='[Demo custom fields]'>
+
+### Theme and colors
+
+To change bar colors there is setting the theme:
+
+```python
+$XONTRIB_PROMPT_BAR_THEME = {
+        'left': '{hostname}{user}{cwd_abs#accent}',
+        'right': '{env_name#section}{gitstatus_noc#section}{date_time_tz}',
+        'bar_bg': '{BACKGROUND_#FF0000}',
+        'bar_fg': '{#AAA}',
+        'section_bg': '{BACKGROUND_#444}',
+        'section_fg': '{#CCC}',
+        'accent_fg': '{BOLD_#DDD}',
+    }
+xontrib load prompt_bar
+```
 
 ### Using [Starship](https://github.com/starship/starship) cross-shell prompt to rendering right sections
 
