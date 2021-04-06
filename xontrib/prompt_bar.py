@@ -123,6 +123,7 @@ def _format_sections(s):
     return s.format_map(map)
 
 def _prompt_bar():
+    # Jump to parent if the current directory does not exist.
     try:
         d = Path(__xonsh__.env['PWD'])
         nd = d
@@ -133,20 +134,22 @@ def _prompt_bar():
             execx(f'cd {repr(str(nd))}')
     except:
         pass
-    
+
+    # Get the terminal size
     try:
         ts = os.get_terminal_size()
         cols = ts.columns
     except Exception as e:
         return f'xontrib-prompt-bar error: {e}'
 
+    # Formatting the sections and calculating the bar length
     lpc = _format_sections(_LEFT)
     rpc = _format_sections(_RIGHT)
     lp = _replace_emoji(_remove_colors(lpc))
     rp = _replace_emoji(_remove_colors(rpc))
-
     w = ' ' * ( int(cols) - len(lp) - len(rp) )
     
+    # Rendering the prompt
     return f'{_BAR_BG}{_BAR_FG}{lpc}{_BAR_BG}{_BAR_FG}{w}{rpc}'
 
 @events.on_postcommand
