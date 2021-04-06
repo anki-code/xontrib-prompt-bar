@@ -124,6 +124,17 @@ def _format_sections(s):
 
 def _prompt_bar():
     try:
+        d = Path(__xonsh__.env['PWD'])
+        nd = d
+        while not nd.exists():
+            nd = nd.parent
+        if nd != d:
+            printx(f'{{YELLOW}}The directory {d} does not exist. Jump to parent: {nd}{{RESET}}')
+            execx(f'cd {repr(str(nd))}')
+    except:
+        pass
+    
+    try:
         ts = os.get_terminal_size()
         cols = ts.columns
     except Exception as e:
