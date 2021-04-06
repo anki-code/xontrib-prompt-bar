@@ -75,9 +75,9 @@ Result:
 
 <img src='https://raw.githubusercontent.com/anki-code/xontrib-prompt-bar/master/static/Demo-custom.png' alt='[Demo custom fields]'>
 
-### Theme and colors
+### Themes and colors
 
-To change bar colors there is setting the theme:
+To change the bar colors there is setting the theme:
 
 ```python
 $XONTRIB_PROMPT_BAR_THEME = {
