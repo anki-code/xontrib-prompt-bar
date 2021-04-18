@@ -40,11 +40,10 @@ The bar theme supports fields:
 * `screens` - list of the windows that created by [screen window manager](https://www.gnu.org/software/screen/manual/screen.html#Overview)
 * `cwd_abs` - current absolute path (`~` disabled)
 * `date_time_tz` - date and time with timezone i.e. `21-12-25 18:00:00-01`
-* `gitstatus_noc` - the same as xonsh `gitstatus` but without colors
 
 To customize the appearance of the fields on the bar you can use wrappers and chaining them:
 ```python
-$XONTRIB_PROMPT_BAR_RIGHT = '{hostname#accent#section}'
+$XONTRIB_PROMPT_BAR_RIGHT = '{hostname#accent#section} {gitstatus#nocolorx}'
 xontrib load prompt_bar
 ```
 Available wrappers:
@@ -53,7 +52,7 @@ Available wrappers:
 * `noesc` - remove ANSI escape characters (colors)
 * `strip` - remove white spaces in the begin and end
 * `nonl` - replace new line symbols to spaces
-* `nocolorx` - remove xonsh color tags i.e. `{RED}` or `{#00ff00}`
+* `nocolorx` - remove xonsh color tags i.e. `{RED}` or `{#00ff00}`.
 * Also you can create your own fields and wrapper. See the section below.
 
 ### Add custom fields and wrappers
