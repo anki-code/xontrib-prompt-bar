@@ -47,11 +47,11 @@ $XONTRIB_PROMPT_BAR_RIGHT = '{hostname#accent#section} {gitstatus#nocolorx}'
 xontrib load prompt_bar
 ```
 Available wrappers:
-* `section` - add backlight for the text
-* `accent` - bold font and lighter color
-* `noesc` - remove ANSI escape characters (colors)
-* `strip` - remove white spaces in the begin and end
-* `nonl` - replace new line symbols to spaces
+* `section` - add backlight for the text.
+* `accent` - bold font and lighter color.
+* `noesc` - remove ANSI escape characters (colors).
+* `strip` - remove white spaces in the begin and end.
+* `nonl` - replace new line symbols to spaces.
 * `nocolorx` - remove xonsh color tags i.e. `{RED}` or `{#00ff00}`.
 * Also you can create your own fields and wrapper. See the section below.
 
