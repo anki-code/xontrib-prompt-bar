@@ -91,6 +91,7 @@ $XONTRIB_PROMPT_BAR_THEME = {
 }
 xontrib load prompt_bar
 ```
+To choose the colors there is [HTML Color Picker](https://www.w3schools.com/colors/colors_picker.asp).
 
 ### Using [Starship](https://github.com/starship/starship) cross-shell prompt to rendering right sections
 
