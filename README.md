@@ -66,6 +66,7 @@ Builtin wrappers:
 * `accent` - bold font and lighter color.
 * `noesc` - remove ANSI escape characters (colors).
 * `strip` - remove white spaces in the begin and end.
+* `strip_brackets` - remove white spaces in the begin and end and then remove the brackets `()[]{}` if the text begins from brackets.
 * `nonl` - replace new line symbols to spaces.
 * `nocolorx` - remove xonsh color tags i.e. `{RED}` or `{#00ff00}`.
 
