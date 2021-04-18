@@ -35,7 +35,7 @@ echo 'xontrib load prompt_bar' >> ~/.xonshrc
 
 ### Fields
 
-The bar theme supports fields:
+Supported fields:
 * [xonsh default fields and colors notation](https://xon.sh/tutorial.html#customizing-the-prompt)
 * `screens` - list of the windows that created by [screen window manager](https://www.gnu.org/software/screen/manual/screen.html#Overview)
 * `cwd_abs` - current absolute path (`~` disabled)
@@ -46,7 +46,7 @@ To customize the appearance of the fields on the bar you can use wrappers and ch
 $XONTRIB_PROMPT_BAR_RIGHT = '{hostname#accent#section} {gitstatus#nocolorx}'
 xontrib load prompt_bar
 ```
-Available wrappers:
+Builtin wrappers:
 * `section` - add backlight for the text.
 * `accent` - bold font and lighter color.
 * `noesc` - remove ANSI escape characters (colors).
