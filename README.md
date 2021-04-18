@@ -53,7 +53,8 @@ Available wrappers:
 * `strip` - remove white spaces in the begin and end.
 * `nonl` - replace new line symbols to spaces.
 * `nocolorx` - remove xonsh color tags i.e. `{RED}` or `{#00ff00}`.
-* To create your own fields and wrapper see the section below.
+
+To create your own fields and wrapper see the section below.
 
 ### Add custom fields and wrappers
 How to add two new fields called `my_left_custom` and `my_right_custom` and one new wrapper called `brackets`.
