@@ -36,7 +36,7 @@ echo 'xontrib load prompt_bar' >> ~/.xonshrc
 ```python
 $XONTRIB_PROMPT_BAR_THEME = {
     'left': '{hostname}{user}{cwd_abs#accent}',
-    'right': '{env_name#section}{gitstatus#nocolorx#section}{date_time_tz}',
+    'right': '{env_name#strip_brackets#section}{gitstatus#nocolorx#section}{date_time_tz}',
     'bar_bg': '{BACKGROUND_#323232}',
     'bar_fg': '{#AAA}',
     'section_bg': '{BACKGROUND_#444}',
@@ -82,7 +82,7 @@ $XONTRIB_PROMPT_BAR_WRAPPERS = {
 }
 
 $XONTRIB_PROMPT_BAR_LEFT = '{hostname}{user}{cwd_abs#accent}{my_left_custom#brackets}'
-$XONTRIB_PROMPT_BAR_RIGHT = '{my_right_custom#section}{env_name#section}{gitstatus#nocolorx#section}{date_time_tz}'
+$XONTRIB_PROMPT_BAR_RIGHT = '{my_right_custom#section}{env_name#strip_brackets#section}{gitstatus#nocolorx#section}{date_time_tz}'
 
 xontrib load prompt_bar
 ```
@@ -97,7 +97,7 @@ To change the bar colors there is setting the theme:
 ```python
 $XONTRIB_PROMPT_BAR_THEME = {
     'left':       '{hostname}{user}{cwd_abs#accent}',
-    'right':      '{env_name#section}{gitstatus#nocolorx#section}{date_time_tz}',
+    'right':      '{env_name#strip_brackets#section}{gitstatus#nocolorx#section}{date_time_tz}',
     'bar_bg':     '{BACKGROUND_#FF0000}',
     'bar_fg':     '{#AAA}',
     'section_bg': '{BACKGROUND_#444}',
