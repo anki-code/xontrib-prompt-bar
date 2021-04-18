@@ -31,9 +31,24 @@ echo 'xontrib load prompt_bar' >> ~/.xonshrc
 # Reload xonsh
 ```
 
+## Default theme
+
+```
+$XONTRIB_PROMPT_BAR_THEME = {
+    'left': '{hostname}{user}{cwd_abs#accent}',
+    'right': '{env_name#section}{gitstatus_noc#section}{date_time_tz}',
+    'bar_bg': '{BACKGROUND_#323232}',
+    'bar_fg': '{#AAA}',
+    'section_bg': '{BACKGROUND_#444}',
+    'section_fg': '{#CCC}',
+    'accent_fg': '{BOLD_#DDD}',
+}
+xontrib load prompt_bar
+```
+
 ## Use cases
 
-### Fields
+### Customize the fields
 
 Supported fields:
 * [xonsh default fields and colors notation](https://xon.sh/tutorial.html#customizing-the-prompt)
