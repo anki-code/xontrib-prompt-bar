@@ -33,7 +33,7 @@ echo 'xontrib load prompt_bar' >> ~/.xonshrc
 
 ## Default theme
 
-```
+```python
 $XONTRIB_PROMPT_BAR_THEME = {
     'left': '{hostname}{user}{cwd_abs#accent}',
     'right': '{env_name#section}{gitstatus_noc#section}{date_time_tz}',
