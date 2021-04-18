@@ -37,9 +37,9 @@ echo 'xontrib load prompt_bar' >> ~/.xonshrc
 
 Supported fields:
 * [xonsh default fields and colors notation](https://xon.sh/tutorial.html#customizing-the-prompt)
-* `screens` - list of the windows that created by [screen window manager](https://www.gnu.org/software/screen/manual/screen.html#Overview)
-* `cwd_abs` - current absolute path (`~` disabled)
-* `date_time_tz` - date and time with timezone i.e. `21-12-25 18:00:00-01`
+* `screens` - list of the windows that created by [screen window manager](https://www.gnu.org/software/screen/manual/screen.html#Overview) i.e. `screen -S mywin`.
+* `cwd_abs` - current absolute path (`~` disabled).
+* `date_time_tz` - date and time with timezone i.e. `21-12-25 18:00:00-01`.
 
 To customize the appearance of the fields on the bar you can use wrappers and chaining them:
 ```python
