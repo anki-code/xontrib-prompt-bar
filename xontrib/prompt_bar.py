@@ -12,7 +12,7 @@ Themes:
 _pb_themes = {
     'default': {
         'left': '{hostname}{user}{cwd_abs#accent}',
-        'right': '{env_name#section}{gitstatus#nocolorx#section}{date_time_tz}',
+        'right': '{env_name#strip_brackets#section}{gitstatus#nocolorx#section}{date_time_tz}',
         'bar_bg': '{BACKGROUND_#323232}',
         'bar_fg': '{#AAA}',
         'section_bg': '{BACKGROUND_#444}',
@@ -61,7 +61,6 @@ def _field_date_time_tz():
     return t[:-2] if t[-2:] == '00' else t
 
 __xonsh__.env['PROMPT_FIELDS']['prompt_end_xonsh'] = "#" if is_superuser() else "@"
-__xonsh__.env['PROMPT_FIELDS']['env_prefix'] = __xonsh__.env['PROMPT_FIELDS']['env_postfix'] = ''
 __xonsh__.env['PROMPT_FIELDS']['cwd_abs'] = lambda: str(Path(__xonsh__.env['PROMPT_FIELDS']['cwd']()).expanduser())
 __xonsh__.env['PROMPT_FIELDS']['date_time_tz'] = _field_date_time_tz
 
@@ -80,6 +79,10 @@ def _screens():
     return ', '.join(line)
 __xonsh__.env['PROMPT_FIELDS']['screens'] = _screens
 
+def _strip_brackets(v):
+    v = v.strip()
+    return v.strip("()[]{} \n\r") if v and v[0] in '([{' else v
+
 _wrappers = {
     'accent': lambda v: f'{_ACCENT_FG}{v}',
     'section': lambda v: f'{_SECTION_BG}{_SECTION_FG} {v} {_NOC}{_BAR_BG}{_BAR_FG}',
@@ -87,6 +90,7 @@ _wrappers = {
     'nocolorx': lambda v: _remove_colors(v),
     'nonl': lambda v: v.replace('\n', ' '),
     'strip': lambda v: v.strip(),
+    'strip_brackets': _strip_brackets
 }
 
 for k,f in __xonsh__.env.get('XONTRIB_PROMPT_BAR_WRAPPERS', {}).items():
