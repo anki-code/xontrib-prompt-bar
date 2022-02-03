@@ -125,6 +125,15 @@ Result:
 
 <img src="https://raw.githubusercontent.com/anki-code/xontrib-prompt-bar/master/static/xontrib-prompt-bar-starship.png" alt="Prompt bar with starship sections.">
 
+### Using [xontrib-cmd-durations](https://github.com/jnoortheen/xontrib-cmd-durations)
+
+The [xontrib-cmd-durations](https://github.com/jnoortheen/xontrib-cmd-durations) is to send notification once long-running command is finished and also show the execution time. Usage example:
+
+```python
+# Add `{long_cmd_duration}` section
+$XONTRIB_PROMPT_BAR_RIGHT = '{long_cmd_duration}{screens#section}{env_name#strip_brackets#section}{date_time_tz}'
+xontrib load cmd_done
+```
 
 ### Additional links
 * [Asynchronous section rendering](https://xon.sh/envvars.html#enable-async-prompt)
