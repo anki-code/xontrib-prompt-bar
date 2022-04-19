@@ -12,7 +12,7 @@ Themes:
 _pb_themes = {
     'default': {
         'left': '{hostname}{user}{cwd_abs#accent}',
-        'right': '{env_name#strip_brackets#section}{gitstatus#nocolorx#section}{date_time_tz}',
+        'right': '{env_name#strip_brackets#section}{date_time_tz}', # Temporary removed {gitstatus#nocolorx#section}
         'bar_bg': '{BACKGROUND_#323232}',
         'bar_fg': '{#AAA}',
         'section_bg': '{BACKGROUND_#444}',
@@ -63,9 +63,6 @@ def _field_date_time_tz():
 __xonsh__.env['PROMPT_FIELDS']['prompt_end_xonsh'] = "#" if is_superuser() else "@"
 __xonsh__.env['PROMPT_FIELDS']['cwd_abs'] = lambda: str(Path(__xonsh__.env['PROMPT_FIELDS']['cwd']()).expanduser())
 __xonsh__.env['PROMPT_FIELDS']['date_time_tz'] = _field_date_time_tz
-
-# DEPRECATED: use `{gitstatus#nocolorx}` instead of `{gitstatus_noc}`
-__xonsh__.env['PROMPT_FIELDS']['gitstatus_noc'] = lambda: _remove_colors(__xonsh__.env['PROMPT_FIELDS']['gitstatus']())
 
 def _screens():
     line = []
