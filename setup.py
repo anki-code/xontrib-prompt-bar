@@ -20,7 +20,7 @@ setup(
     packages=[
         'xontrib',
     ],
-    package_dir={'xontrib': 'xontrib', 'xontrib2': 'xontrib'},
+    package_dir={'xontrib': 'xontrib'},
     package_data={'xontrib': ['*.py']},
     platforms='any',
     url='https://github.com/anki-code/xontrib-prompt-bar',
