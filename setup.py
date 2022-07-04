@@ -19,7 +19,6 @@ setup(
     python_requires='>=3.6',
     packages=[
         'xontrib',
-        'xontrib2'  # https://github.com/anki-code/xonsh-operators-proposal/blob/main/XEP-2.rst
     ],
     package_dir={'xontrib': 'xontrib', 'xontrib2': 'xontrib'},
     package_data={'xontrib': ['*.py']},
