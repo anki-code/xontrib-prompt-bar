@@ -160,4 +160,4 @@ def _(**kwargs):
     print('')
 
 __xonsh__.env['PROMPT_FIELDS']['prompt_bar'] = _prompt_bar
-__xonsh__.env['PROMPT'] = "{prompt_bar}\n{WHITE}{prompt_end_xonsh}{RESET} "
+__xonsh__.env['PROMPT'] = "{prompt_bar}{RESET}\n{WHITE}{prompt_end_xonsh}{RESET} "
