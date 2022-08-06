@@ -157,9 +157,10 @@ def _prompt_bar():
 
 @events.on_postcommand
 def _(**kwargs):
-    print('')
     if rtn != 0 and __xonsh__.env.get('XONTRIB_PROMPT_BAR_SHOW_RETURN', True):
-        printx(f"{{RED}}Return {rtn}{{RESET}}\n")    
+        printx(f"{{RED}}Return {rtn}{{RESET}}\n")
+    else:
+        print('')
 
 __xonsh__.env['PROMPT_FIELDS']['prompt_bar'] = _prompt_bar
 __xonsh__.env['PROMPT'] = "{prompt_bar}{RESET}\n{WHITE}{prompt_end_xonsh}{RESET} "
