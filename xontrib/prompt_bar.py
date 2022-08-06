@@ -156,7 +156,7 @@ def _prompt_bar():
     return f'{_BAR_BG}{_BAR_FG}{lpc}{_BAR_BG}{_BAR_FG}{w}{rpc}'
 
 @events.on_postcommand
-def _(**kwargs):
+def _(cmd, rtn, **kwargs):
     if rtn != 0 and __xonsh__.env.get('XONTRIB_PROMPT_BAR_SHOW_RETURN', True):
         printx(f"{{RED}}Return {rtn}{{RESET}}\n")
     else:
