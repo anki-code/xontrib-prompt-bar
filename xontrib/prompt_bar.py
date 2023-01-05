@@ -12,7 +12,7 @@ Themes:
 _pb_themes = {
     'default': {
         'left': '{hostname}{user}{cwd_abs#accent}',
-        'right': '{env_name#strip_brackets#section}{date_time_tz}', # Temporary removed {gitstatus#nocolorx#section}
+        'right': '{env_name#strip#strip_brackets#section}{date_time_tz}', # Temporary removed {gitstatus#nocolorx#section}
         'bar_bg': '{BACKGROUND_#323232}',
         'bar_fg': '{#AAA}',
         'section_bg': '{BACKGROUND_#444}',
