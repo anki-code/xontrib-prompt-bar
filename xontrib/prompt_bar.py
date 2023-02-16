@@ -1,3 +1,5 @@
+"""The bar prompt for xonsh shell with customizable sections and Starship support. """
+
 import os
 import re
 import time
