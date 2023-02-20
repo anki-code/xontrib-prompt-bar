@@ -135,6 +135,18 @@ $XONTRIB_PROMPT_BAR_RIGHT = '{long_cmd_duration}{screens#section}{env_name#strip
 xontrib load cmd_done
 ```
 
+### Hide return code in special cases
+
+Sometimes it's needed to hide the return code. In this case you can use `-8888` return code i.e.:
+
+```xsh
+aliases['cdls'] = "cd @($arg0) && @(lambda: -8888 if len(g`./*`) > 100 else 0) && ls --group-directories-first -A --color"
+cdls /
+# return code is 0 and `ls` command was executed and return code is not shown
+cdls /usr/sbin
+# return code is -8888 and `ls` command was NOT executed and return code is not shown
+```
+
 ### Additional links
 * [Asynchronous section rendering](https://xon.sh/envvars.html#enable-async-prompt)
 * [xonsh default fields and colors notation](https://xon.sh/tutorial.html#customizing-the-prompt)
@@ -145,7 +157,6 @@ xontrib load cmd_done
 ## Environment variables
 
 * `$XONTRIB_PROMPT_BAR_SHOW_RETURN = True` - show return code.
-
 
 ## Known issues
 ### Spaces in the copied and pasted command line
