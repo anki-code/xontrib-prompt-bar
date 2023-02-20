@@ -159,7 +159,7 @@ def _prompt_bar():
 
 @events.on_postcommand
 def _(cmd, rtn, **kwargs):
-    if rtn != 0 and __xonsh__.env.get('XONTRIB_PROMPT_BAR_SHOW_RETURN', True):
+    if rtn not in [0, -8888] and __xonsh__.env.get('XONTRIB_PROMPT_BAR_SHOW_RETURN', True):
         color = 'RED'
         if rtn == -2:  # Ctrl+C in Linux
             color = 'YELLOW'
