@@ -142,6 +142,11 @@ xontrib load cmd_done
 * [Awesome example of rewriting the theme from Jonathan Slenders](https://github.com/prompt-toolkit/python-prompt-toolkit/blob/master/examples/prompts/fancy-zsh-prompt.py)
 * [Customization the colors in the input line](https://github.com/xonsh/xonsh/pull/3878#issuecomment-707982828)
 
+## Environment variables
+
+* `$XONTRIB_PROMPT_BAR_SHOW_RETURN = True` - show return code.
+
+
 ## Known issues
 ### Spaces in the copied and pasted command line
 Please update [prompt_toolkit](https://github.com/prompt-toolkit/python-prompt-toolkit) 
