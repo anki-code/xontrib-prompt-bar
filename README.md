@@ -36,7 +36,7 @@ echo 'xontrib load prompt_bar' >> ~/.xonshrc
 ```python
 $XONTRIB_PROMPT_BAR_THEME = {
     'left': '{hostname}{user}{cwd_abs#accent}',
-    'right': '{env_name#strip_brackets#section}{gitstatus#nocolorx#section}{date_time_tz}',
+    'right': '{env_name#strip_brackets#section}{date_time_tz}',
     'bar_bg': '{BACKGROUND_#323232}',
     'bar_fg': '{#AAA}',
     'section_bg': '{BACKGROUND_#444}',
@@ -58,7 +58,7 @@ Supported fields:
 
 To customize the appearance of the fields on the bar you can use wrappers and chaining them:
 ```python
-$XONTRIB_PROMPT_BAR_RIGHT = '{hostname#accent#section} {gitstatus#nocolorx}'
+$XONTRIB_PROMPT_BAR_RIGHT = '{hostname#accent#section} {date_time_tz#nocolorx}'
 xontrib load prompt_bar
 ```
 Builtin wrappers:
@@ -83,7 +83,7 @@ $XONTRIB_PROMPT_BAR_WRAPPERS = {
 }
 
 $XONTRIB_PROMPT_BAR_LEFT = '{hostname}{user}{cwd_abs#accent}{my_left_custom#brackets}'
-$XONTRIB_PROMPT_BAR_RIGHT = '{my_right_custom#section}{env_name#strip_brackets#section}{gitstatus#nocolorx#section}{date_time_tz}'
+$XONTRIB_PROMPT_BAR_RIGHT = '{my_right_custom#section}{env_name#strip_brackets#section}{date_time_tz}'
 
 xontrib load prompt_bar
 ```
@@ -98,7 +98,7 @@ To change the bar colors there is setting the theme:
 ```python
 $XONTRIB_PROMPT_BAR_THEME = {
     'left':       '{hostname}{user}{cwd_abs#accent}',
-    'right':      '{env_name#strip_brackets#section}{gitstatus#nocolorx#section}{date_time_tz}',
+    'right':      '{env_name#strip_brackets#section}{date_time_tz}',
     'bar_bg':     '{BACKGROUND_#FF0000}',
     'bar_fg':     '{#AAA}',
     'section_bg': '{BACKGROUND_#444}',
