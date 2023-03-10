@@ -123,6 +123,7 @@ error_symbol = ""
 symbol = ""
 """.strip()) > ~/.config/starship_xonsh_right.toml
 
+# Then just add the starship bar to right
 $XONTRIB_PROMPT_STARSHIP_RIGHT_CONFIG = "~/.config/starship_xonsh_right.toml"
 $XONTRIB_PROMPT_STARSHIP_REPLACE_PROMPT = False
 $XONTRIB_PROMPT_BAR_RIGHT = '{starship_right#noesc#nonl#strip}'
