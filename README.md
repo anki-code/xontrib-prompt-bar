@@ -111,10 +111,18 @@ To choose the colors there is [HTML Color Picker](https://www.w3schools.com/colo
 
 ### Using [Starship](https://github.com/starship/starship) cross-shell prompt to rendering right sections
 
-Barship using [xontrib-prompt-starship](https://github.com/anki-code/xontrib-prompt-starship):
+"Barship" using [xontrib-prompt-starship](https://github.com/anki-code/xontrib-prompt-starship):
 
 ```python
 # First of all create a starship config to return sections in one line
+mkdir -p ~/.config && echo @("""
+[character]
+success_symbol = ""
+error_symbol = ""
+[status]
+symbol = ""
+""".strip()) > ~/.config/starship_xonsh_right.toml
+
 $XONTRIB_PROMPT_STARSHIP_RIGHT_CONFIG = "~/.config/starship_xonsh_right.toml"
 $XONTRIB_PROMPT_STARSHIP_REPLACE_PROMPT = False
 $XONTRIB_PROMPT_BAR_RIGHT = '{starship_right#noesc#nonl#strip}'
