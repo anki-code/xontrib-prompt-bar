@@ -165,7 +165,7 @@ cdls /usr/sbin
 
 ## Environment variables
 
-* `$XONTRIB_PROMPT_BAR_SHOW_RETURN = True` - show return code.
+* `$XONTRIB_PROMPT_BAR_SHOW_RETURN = True` - show return code. Default `True`.
 
 ## Known issues
 ### Spaces in the copied and pasted command line
