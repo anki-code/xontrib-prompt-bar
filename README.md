@@ -36,7 +36,7 @@ echo 'xontrib load prompt_bar' >> ~/.xonshrc
 ```python
 $XONTRIB_PROMPT_BAR_THEME = {
     'left': '{hostname}{user}{cwd_abs#accent}',
-    'right': '{env_name#strip_brackets#section}{date_time_tz}',
+    'right': '{curr_branch#section}{env_name#strip_brackets#section}{date_time_tz}',
     'bar_bg': '{BACKGROUND_#323232}',
     'bar_fg': '{#AAA}',
     'section_bg': '{BACKGROUND_#444}',
@@ -98,7 +98,7 @@ To change the bar colors there is setting the theme:
 ```python
 $XONTRIB_PROMPT_BAR_THEME = {
     'left':       '{hostname}{user}{cwd_abs#accent}',
-    'right':      '{env_name#strip_brackets#section}{date_time_tz}',
+    'right':      '{curr_branch#section}{env_name#strip_brackets#section}{date_time_tz}',
     'bar_bg':     '{BACKGROUND_#FF0000}',
     'bar_fg':     '{#AAA}',
     'section_bg': '{BACKGROUND_#444}',
