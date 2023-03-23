@@ -140,7 +140,7 @@ The [xontrib-cmd-durations](https://github.com/jnoortheen/xontrib-cmd-durations)
 
 ```python
 # Add `{long_cmd_duration}` section
-$XONTRIB_PROMPT_BAR_RIGHT = '{long_cmd_duration}{screens#section}{env_name#strip_brackets#section}{date_time_tz}'
+$XONTRIB_PROMPT_BAR_RIGHT = '{long_cmd_duration}{curr_branch#section}{screens#section}{env_name#strip_brackets#section}{date_time_tz}'
 xontrib load cmd_done
 ```
 
