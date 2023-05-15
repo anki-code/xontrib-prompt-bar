@@ -9,7 +9,7 @@ except (IOError, OSError):
 
 setup(
     name='xontrib-prompt-bar',
-    version='0.5.5',
+    version='0.5.6',
     license='BSD',
     author='anki',
     author_email='author@example.com',
