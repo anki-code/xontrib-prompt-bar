@@ -36,7 +36,7 @@ echo 'xontrib load prompt_bar' >> ~/.xonshrc
 ```python
 $XONTRIB_PROMPT_BAR_THEME = {
     'left': '{hostname}{user}{cwd_abs#accent}',
-    'right': '{curr_branch#section}{env_name#strip_brackets#section}{date_time_tz}',
+    'right': '{hist_status#section}{curr_branch#section}{env_name#strip_brackets#section}{date_time_tz}',
     'bar_bg': '{BACKGROUND_#323232}',
     'bar_fg': '{#AAA}',
     'section_bg': '{BACKGROUND_#444}',
@@ -55,6 +55,7 @@ Supported fields:
 * `screens` - list of the windows that created by [screen window manager](https://www.gnu.org/software/screen/manual/screen.html#Overview) i.e. `screen -S mywin`.
 * `cwd_abs` - current absolute path (`~` disabled).
 * `date_time_tz` - date and time with timezone i.e. `21-12-25 18:00:00-01`.
+* `hist_status` - show `hist off` if history disabled by [`history off`](https://xon.sh/tutorial_hist.html#off-action) command.
 
 To customize the appearance of the fields on the bar you can use wrappers and chaining them:
 ```python
