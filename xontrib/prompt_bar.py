@@ -14,7 +14,7 @@ Themes:
 _pb_themes = {
     'default': {
         'left': '{hostname}{user}{cwd_abs#accent}',
-        'right': '{curr_branch#section}{env_name#strip#strip_brackets#section}{date_time_tz}',
+        'right': '{hist_status#section}{curr_branch#section}{env_name#strip#strip_brackets#section}{date_time_tz}',
         'bar_bg': '{BACKGROUND_#323232}',
         'bar_fg': '{#AAA}',
         'section_bg': '{BACKGROUND_#444}',
@@ -65,6 +65,8 @@ def _field_date_time_tz():
 __xonsh__.env['PROMPT_FIELDS']['prompt_end_xonsh'] = "#" if is_superuser() else "@"
 __xonsh__.env['PROMPT_FIELDS']['cwd_abs'] = lambda: str(Path(__xonsh__.env['PROMPT_FIELDS']['cwd']()).expanduser())
 __xonsh__.env['PROMPT_FIELDS']['date_time_tz'] = _field_date_time_tz
+__xonsh__.env['PROMPT_FIELDS']['hist_status'] = lambda: '' if __xonsh__.history.remember_history else 'hist off'
+
 
 def _screens():
     line = []
