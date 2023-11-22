@@ -62,7 +62,7 @@ def _field_date_time_tz():
     t = time.strftime('%y-%m-%d %H:%M:%S%z', time.localtime())
     return t[:-2] if t[-2:] == '00' else t
 
-__xonsh__.env['PROMPT_FIELDS']['prompt_end_xonsh'] = "#" if is_superuser() else "@"
+__xonsh__.env['PROMPT_FIELDS']['prompt_end_xonsh'] = "#@" if is_superuser() else "@"
 __xonsh__.env['PROMPT_FIELDS']['cwd_abs'] = lambda: str(Path(__xonsh__.env['PROMPT_FIELDS']['cwd']()).expanduser())
 __xonsh__.env['PROMPT_FIELDS']['date_time_tz'] = _field_date_time_tz
 __xonsh__.env['PROMPT_FIELDS']['hist_status'] = lambda: '' if __xonsh__.history.remember_history else 'hist off'
