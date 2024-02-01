@@ -137,7 +137,7 @@ def _prompt_bar():
         while not nd.exists():
             nd = nd.parent
         if nd != d:
-            printx(f'{{YELLOW}}The directory {d} does not exist. Jump to parent: {nd}{{RESET}}')
+            printx(f'{{YELLOW}}The directory {d} does not exist.\nJump to parent: {nd}{{RESET}}')
             execx(f'cd {repr(str(nd))}')
     except:
         pass
