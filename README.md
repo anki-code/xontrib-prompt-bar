@@ -122,6 +122,8 @@ success_symbol = ""
 error_symbol = ""
 [status]
 symbol = ""
+[python]
+symbol = "py "
 #[directory]
 #disabled = true
 """.strip()) > ~/.config/starship_xonsh_right.toml
