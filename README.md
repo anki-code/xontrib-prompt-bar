@@ -23,6 +23,9 @@ Features:
 
 * Full customization. Change colors, add sections with info you need easily with Python.
 
+## Before Install
+
+If you like [Starship](https://github.com/starship/starship) you may like [starship-prompt-mono](https://github.com/anki-code/starship-prompt-mono).
 
 ## Install
 ```python
